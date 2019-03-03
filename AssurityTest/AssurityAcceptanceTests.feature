@@ -1,11 +1,10 @@
 ﻿Feature: AssurityAcceptanceTests
 	
 Background: 
-Given A request is made to the service
+Given A request is made to the service and response is saved
 
 | Url |
 | https://api.tmsandbox.co.nz/v1/Categories/6327/Details.json?catalogue=false | 
-When The response has been saved
 
 	
 @unit

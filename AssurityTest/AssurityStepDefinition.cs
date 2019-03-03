@@ -15,7 +15,7 @@ namespace AssurityTest
     [Binding]
     public sealed class AssurityStepDefinition
     {
-        [Given(@"A request is made to the service")]
+        [Given(@"A request is made to the service and response is saved")]
         public void SoapRequestToService(Table service)
         {
             string Url = String.Empty;
@@ -25,12 +25,6 @@ namespace AssurityTest
                 Url = data.Url;
             }
             SoapMethods.InitializeSoapRequestTest(Url);
-        }
-
-        [When("The response has been saved")]
-        public void SaveTheResponse()
-        {
-            SoapMethods.SaveFormattedXMLResponse();   
         }
 
         [Then(@"The service status code should be (.*)")]
