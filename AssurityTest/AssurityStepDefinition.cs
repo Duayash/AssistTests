@@ -34,23 +34,38 @@ namespace AssurityTest
             Assert.AreEqual(expectedStatusCode, responseStatusCode);
         }
 
-        [Then(@"Name is (.*), CanRelist is (.*) and Promotion element (.*) has a description containing text (.*)")]
-        public void ThenNameIsCarbonCreditsCanRelistIsTrueAndPromotionElementGalleryHasADescriptionContainingTextXLargerImage(string Name, string RFlag, string PromoName, string Text)
+        [Then(@"Name is (.*)")]
+        public void ThenNameIsCarbonCredits(string Name)
         {
             string json = (string)ScenarioContext.Current["SoapResult"];
 
             var data = (JObject)JsonConvert.DeserializeObject(json);
-            
+
             string strName = data["Name"].Value<string>();
-            Assert.AreEqual(Name, strName, Name + "doesn't match with " + strName + " in the response");
+            Assert.AreEqual(Name, strName, "Name :" + Name + " doesn't match with " + strName + " in the response");
+        }
+
+        [Then(@"CanRelist is (.*)")]
+        public void ThenCanRelistIsTrue(string RFlag)
+        {
+            string json = (string)ScenarioContext.Current["SoapResult"];
+            var data = (JObject)JsonConvert.DeserializeObject(json);
 
             string strRelist = data["CanRelist"].Value<string>();
-            Assert.AreEqual(RFlag, strRelist, RFlag + "doesn't match with " + strRelist + " in the response");
-
-            bool returnFlag = EvaluatePromotionAndDescription(data, PromoName, Text);
-
-            Assert.AreEqual(true, returnFlag, "Promotion name " + PromoName + " not found with description " + Text);
+            Assert.AreEqual(RFlag, strRelist, "CanRelist :" + RFlag + " doesn't match with " + strRelist + " in the response");
         }
+
+        [Then(@"Promotion element is (.*) has a description containing text (.*)")]
+        public void ThenPromotionElementIsGalleryHasADescriptionContainingTextXLargerImage(string PromoName, string descText)
+        {
+            string json = (string)ScenarioContext.Current["SoapResult"];
+            var data = (JObject)JsonConvert.DeserializeObject(json);
+
+            bool returnFlag = EvaluatePromotionAndDescription(data, PromoName, descText);
+
+            Assert.AreEqual(true, returnFlag, "Promotion name " + PromoName + " not found with description " + descText);
+        }
+
 
         //Function checks if Promotion Name with description are present in the response
         bool EvaluatePromotionAndDescription(JObject data, string PromoName, string desc)

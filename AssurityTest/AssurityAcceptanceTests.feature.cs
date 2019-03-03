@@ -107,26 +107,73 @@ testRunner.Then(string.Format("The service status code should be {0}", responseC
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Assert Category parameters from the response")]
-        [NUnit.Framework.CategoryAttribute("unit")]
-        [NUnit.Framework.TestCaseAttribute("Carbon credits", "True", "Gallery", "2x larger image", null)]
-        public virtual void AssertCategoryParametersFromTheResponse(string name, string rFlag, string promoName, string text, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Assert Category name from the response")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        [NUnit.Framework.TestCaseAttribute("Carbon credits", null)]
+        public virtual void AssertCategoryNameFromTheResponse(string name, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "unit"};
+                    "acceptance"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Assert Category parameters from the response", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Assert Category name from the response", null, @__tags);
 #line 19
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
 #line 20
-testRunner.Then(string.Format("Name is {0}, CanRelist is {1} and Promotion element {2} has a description contain" +
-                        "ing text {3}", name, rFlag, promoName, text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then(string.Format("Name is {0}", name), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Assert Category CanRelist from the response")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        [NUnit.Framework.TestCaseAttribute("True", null)]
+        public virtual void AssertCategoryCanRelistFromTheResponse(string rFlag, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "acceptance"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Assert Category CanRelist from the response", null, @__tags);
+#line 27
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 28
+testRunner.Then(string.Format("CanRelist is {0}", rFlag), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Assert Promotion Name with description from the response")]
+        [NUnit.Framework.CategoryAttribute("acceptance")]
+        [NUnit.Framework.TestCaseAttribute("Gallery", "2x larger image", null)]
+        public virtual void AssertPromotionNameWithDescriptionFromTheResponse(string promoName, string text, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "acceptance"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Assert Promotion Name with description from the response", null, @__tags);
+#line 35
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 36
+testRunner.Then(string.Format("Promotion element is {0} has a description containing text {1}", promoName, text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
