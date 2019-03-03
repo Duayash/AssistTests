@@ -78,9 +78,7 @@ namespace AssurityTest
             table1.AddRow(new string[] {
                         "https://api.tmsandbox.co.nz/v1/Categories/6327/Details.json?catalogue=false"});
 #line 4
-testRunner.Given("A request is made to the service", ((string)(null)), table1, "Given ");
-#line 8
-testRunner.When("The response has been saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.Given("A request is made to the service and response is saved", ((string)(null)), table1, "Given ");
 #line hidden
         }
         
@@ -97,12 +95,12 @@ testRunner.When("The response has been saved", ((string)(null)), ((TechTalk.Spec
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Assert Category service returns a 200 code", null, @__tags);
-#line 12
+#line 11
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 13
+#line 12
 testRunner.Then(string.Format("The service status code should be {0}", responseCode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -121,12 +119,12 @@ testRunner.Then(string.Format("The service status code should be {0}", responseC
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Assert Category parameters from the response", null, @__tags);
-#line 20
+#line 19
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 3
 this.FeatureBackground();
-#line 21
+#line 20
 testRunner.Then(string.Format("Name is {0}, CanRelist is {1} and Promotion element {2} has a description contain" +
                         "ing text {3}", name, rFlag, promoName, text), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
