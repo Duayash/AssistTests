@@ -15,10 +15,28 @@ Then The service status code should be <ResponseCode>
     | ResponseCode |
     | 200          |
 
-@unit
-Scenario Outline: Assert Category parameters from the response
-Then Name is <Name>, CanRelist is <RFlag> and Promotion element <PromoName> has a description containing text <Text>
+@acceptance
+Scenario Outline: Assert Category name from the response
+Then Name is <Name>
 
 Examples:
-    | Name           | RFlag | PromoName | Text				   |
-    | Carbon credits | True  | Gallery   | 2x larger image     |
+    | Name           | 
+    | Carbon credits | 
+
+@acceptance
+Scenario Outline: Assert Category CanRelist from the response
+Then CanRelist is <RFlag> 
+
+Examples: 
+    | RFlag |
+    | True  |
+
+@acceptance
+Scenario Outline: Assert Promotion Name with description from the response
+Then Promotion element is <PromoName> has a description containing text <Text>
+
+Examples:
+    | PromoName | Text				   |
+    | Gallery   | 2x larger image      |
+
+
