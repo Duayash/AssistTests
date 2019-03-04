@@ -8,6 +8,13 @@ Readme:
 5. Acceptance Test 3 : Checks if CanRelist flag is True in the response
 6. Acceptance Test 4 : Checks if Promotion element is 'Gallery' with description containing text as '2x larger image'.
 
+Highlights of the Application:
+
+1. Configurable: By using BDD features.
+2. Modular : The responsibility has been divided between different classes.
+3. Maintainable : Any new acceptance test can be easily added and tested
+4. Exception handling : Asserts has beed added. If test fails, it reports and control comes out of the application.
+
 
 Future Enhancements:
 
